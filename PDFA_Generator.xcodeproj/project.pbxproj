@@ -25,6 +25,8 @@
 /* Begin PBXFileReference section */
 		42134FC02A0A7B0300B9827B /* PDFA_Generator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PDFA_Generator; sourceTree = BUILT_PRODUCTS_DIR; };
 		42134FC32A0A7B0300B9827B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		42134FCA2A0BC4B100B9827B /* pdfa1.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = pdfa1.in; sourceTree = "<group>"; };
+		42134FCB2A0BC87900B9827B /* pdfa1.out */ = {isa = PBXFileReference; lastKnownFileType = text; path = pdfa1.out; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +43,8 @@
 		42134FB72A0A7B0300B9827B = {
 			isa = PBXGroup;
 			children = (
+				42134FCA2A0BC4B100B9827B /* pdfa1.in */,
+				42134FCB2A0BC87900B9827B /* pdfa1.out */,
 				42134FC22A0A7B0300B9827B /* PDFA_Generator */,
 				42134FC12A0A7B0300B9827B /* Products */,
 			);
