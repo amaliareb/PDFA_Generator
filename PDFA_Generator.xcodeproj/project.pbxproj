@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		42134FC42A0A7B0300B9827B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42134FC32A0A7B0300B9827B /* main.cpp */; };
+		42CB0BD02A4DB9F90008BC70 /* PDFA_Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BCE2A4DB9F90008BC70 /* PDFA_Graph.cpp */; };
+		42CB0BD32A67E27D0008BC70 /* pdfa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BD12A67E27D0008BC70 /* pdfa.cpp */; };
+		42CB0BD62A6802710008BC70 /* pdfa_learner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BD42A6802710008BC70 /* pdfa_learner.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +30,13 @@
 		42134FC32A0A7B0300B9827B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		42134FCA2A0BC4B100B9827B /* pdfa1.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = pdfa1.in; sourceTree = "<group>"; };
 		42134FCB2A0BC87900B9827B /* pdfa1.out */ = {isa = PBXFileReference; lastKnownFileType = text; path = pdfa1.out; sourceTree = "<group>"; };
+		42134FCC2A0BCBFB00B9827B /* strings1.out */ = {isa = PBXFileReference; lastKnownFileType = text; path = strings1.out; sourceTree = "<group>"; };
+		42CB0BCE2A4DB9F90008BC70 /* PDFA_Graph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PDFA_Graph.cpp; sourceTree = "<group>"; };
+		42CB0BCF2A4DB9F90008BC70 /* PDFA_Graph.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PDFA_Graph.hpp; sourceTree = "<group>"; };
+		42CB0BD12A67E27D0008BC70 /* pdfa.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = pdfa.cpp; sourceTree = "<group>"; };
+		42CB0BD22A67E27D0008BC70 /* pdfa.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pdfa.hpp; sourceTree = "<group>"; };
+		42CB0BD42A6802710008BC70 /* pdfa_learner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = pdfa_learner.cpp; sourceTree = "<group>"; };
+		42CB0BD52A6802710008BC70 /* pdfa_learner.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pdfa_learner.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 		42134FB72A0A7B0300B9827B = {
 			isa = PBXGroup;
 			children = (
+				42134FCC2A0BCBFB00B9827B /* strings1.out */,
 				42134FCA2A0BC4B100B9827B /* pdfa1.in */,
 				42134FCB2A0BC87900B9827B /* pdfa1.out */,
 				42134FC22A0A7B0300B9827B /* PDFA_Generator */,
@@ -61,9 +72,23 @@
 		42134FC22A0A7B0300B9827B /* PDFA_Generator */ = {
 			isa = PBXGroup;
 			children = (
+				42CB0BD92A68098B0008BC70 /* learners */,
 				42134FC32A0A7B0300B9827B /* main.cpp */,
+				42CB0BD12A67E27D0008BC70 /* pdfa.cpp */,
+				42CB0BD22A67E27D0008BC70 /* pdfa.hpp */,
+				42CB0BD42A6802710008BC70 /* pdfa_learner.cpp */,
+				42CB0BD52A6802710008BC70 /* pdfa_learner.hpp */,
 			);
 			path = PDFA_Generator;
+			sourceTree = "<group>";
+		};
+		42CB0BD92A68098B0008BC70 /* learners */ = {
+			isa = PBXGroup;
+			children = (
+				42CB0BCF2A4DB9F90008BC70 /* PDFA_Graph.hpp */,
+				42CB0BCE2A4DB9F90008BC70 /* PDFA_Graph.cpp */,
+			);
+			path = learners;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,7 +148,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42CB0BD62A6802710008BC70 /* pdfa_learner.cpp in Sources */,
 				42134FC42A0A7B0300B9827B /* main.cpp in Sources */,
+				42CB0BD02A4DB9F90008BC70 /* PDFA_Graph.cpp in Sources */,
+				42CB0BD32A67E27D0008BC70 /* pdfa.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

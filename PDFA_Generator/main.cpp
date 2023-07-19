@@ -17,82 +17,12 @@
 #include <random>
 #include <sstream>
 #include <fstream>
+#include <set>
 
+#include "pdfa.hpp"
 
-#define DELTA 1e-6
 
 using namespace std;
-
-
-char get_character(int x) {
-    return (char)x + 'a';
-}
-
-
-class PDFA {
-
-    public:
-    
-        const int start_state, end_state;
-        int N_states, N_alphabet;
-        vector<vector<pair<int, double>>> transitions;
-    
-        // constructor for empty PDFA
-        PDFA(int N_states, int N_alphabet): N_states(N_states), N_alphabet(N_alphabet) ,start_state(0), end_state(N_states) {
-            // initialize transition function with sizes N_states and N_alphabet
-            transitions.resize(N_states, vector<pair<int, double>> (N_alphabet, {-1, 0.0}));
-        }
-        
-        // constructor when reading a PDFA
-        PDFA(int N_states, int N_alphabet, vector<vector<pair<int, double>>> transitions): N_states(N_states), N_alphabet(N_alphabet), start_state(0), end_state(N_states), transitions(transitions) {
-        }
-    
-        bool has_transition(int source, int target) {
-            if (target <= start_state || target > end_state) return false;
-            if (source < start_state || source >= end_state) return false;
-            for (int letter = 0; letter < N_alphabet; ++letter) if (transitions[source][letter].first == target) return true;
-            return false;
-        }
-    
-        bool has_letter(int source, int letter) {
-            if (source < start_state || source >= end_state) return false;
-            if (letter < 0 || letter >= N_alphabet) return false;
-            return transitions[source][letter].first >= start_state;
-        }
-    
-        string output_string() {
-            stringstream output;
-            int current = start_state;
-            while (current != end_state) {
-                double probability = (double)(rand() % 100) / 100;
-                for (int letter = 0; letter < N_alphabet; ++letter) {
-                    probability -= transitions[current][letter].second;
-                    if ( probability < DELTA ) {
-                        output << get_character(letter);
-                        current = transitions[current][letter].first;
-                        break;
-                    }
-                }
-            }
-            return output.str();
-        }
-    
-        string output_pdfa(int precision) {
-            stringstream output;
-            output << fixed << showpoint;
-            output << setprecision(precision);
-            output << N_states << ' ' << N_alphabet << '\n';
-            for (int i = 0; i < 10; ++i) {
-                for (int j = 0; j < 4; ++j) output << transitions[i][j].first << ' ' << transitions[i][j].second << "  ";
-                output << '\n';
-            }
-            return output.str();
-        }
-    
-    
-    private:
-    
-};
 
 
 
@@ -178,12 +108,14 @@ PDFA Pdfa_reader(ifstream &istream) {
 
 
 int main(int argc, const char * argv[]) {
-    PDFA pdfa = Pdfa_generator(10, 4, 2, 3);
-    
-    cout << pdfa.output_pdfa(4);
-    
-    // test string generator function
-    cout << output_strings(pdfa, 10).str();
+    // testing pdfa generator
+//    PDFA pdfa = Pdfa_generator(10, 4, 2, 3);
+//
+//    cout << pdfa.output_pdfa(4);
+//
+//    // test string generator function
+//    cout << output_strings(pdfa, 10).str();
+//
     
     // test i/o file function
     ifstream pdfa_in;
@@ -192,8 +124,10 @@ int main(int argc, const char * argv[]) {
     pdfa_out.open("pdfa1.out");
     strings_out.open("strings1.out");
     PDFA copy = Pdfa_reader(pdfa_in);
-    pdfa_out << copy.output_pdfa(4);
-    strings_out << output_strings(copy, 50).str();
+    // pdfa_out << copy.output_pdfa(4);
+    cout << copy.output_pdfa(4);
+    // strings_out << output_strings(copy, 50).str();
+    cout << output_strings(copy, 50).str();
     pdfa_in.close();
     pdfa_out.close();
     strings_out.close();
