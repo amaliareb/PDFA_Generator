@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		42134FC42A0A7B0300B9827B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42134FC32A0A7B0300B9827B /* main.cpp */; };
-		42CB0BD02A4DB9F90008BC70 /* PDFA_Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BCE2A4DB9F90008BC70 /* PDFA_Graph.cpp */; };
 		42CB0BD32A67E27D0008BC70 /* pdfa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BD12A67E27D0008BC70 /* pdfa.cpp */; };
 		42CB0BD62A6802710008BC70 /* pdfa_learner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BD42A6802710008BC70 /* pdfa_learner.cpp */; };
+		42CB0BE12A692AAB0008BC70 /* PDFA_Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BDE2A692AAB0008BC70 /* PDFA_Graph.cpp */; };
+		42CB0BE22A692AAB0008BC70 /* avg_length_learner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BDF2A692AAB0008BC70 /* avg_length_learner.cpp */; };
+		42CB0BE72A692CFF0008BC70 /* tester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BE52A692CFF0008BC70 /* tester.cpp */; };
+		42CB0BEB2A6930BB0008BC70 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BE92A6930BB0008BC70 /* utils.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,12 +34,18 @@
 		42134FCA2A0BC4B100B9827B /* pdfa1.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = pdfa1.in; sourceTree = "<group>"; };
 		42134FCB2A0BC87900B9827B /* pdfa1.out */ = {isa = PBXFileReference; lastKnownFileType = text; path = pdfa1.out; sourceTree = "<group>"; };
 		42134FCC2A0BCBFB00B9827B /* strings1.out */ = {isa = PBXFileReference; lastKnownFileType = text; path = strings1.out; sourceTree = "<group>"; };
-		42CB0BCE2A4DB9F90008BC70 /* PDFA_Graph.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PDFA_Graph.cpp; sourceTree = "<group>"; };
-		42CB0BCF2A4DB9F90008BC70 /* PDFA_Graph.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PDFA_Graph.hpp; sourceTree = "<group>"; };
 		42CB0BD12A67E27D0008BC70 /* pdfa.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = pdfa.cpp; sourceTree = "<group>"; };
 		42CB0BD22A67E27D0008BC70 /* pdfa.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pdfa.hpp; sourceTree = "<group>"; };
 		42CB0BD42A6802710008BC70 /* pdfa_learner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = pdfa_learner.cpp; sourceTree = "<group>"; };
 		42CB0BD52A6802710008BC70 /* pdfa_learner.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = pdfa_learner.hpp; sourceTree = "<group>"; };
+		42CB0BDD2A692AAB0008BC70 /* avg_length_learner.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = avg_length_learner.hpp; sourceTree = "<group>"; };
+		42CB0BDE2A692AAB0008BC70 /* PDFA_Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PDFA_Graph.cpp; sourceTree = "<group>"; };
+		42CB0BDF2A692AAB0008BC70 /* avg_length_learner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = avg_length_learner.cpp; sourceTree = "<group>"; };
+		42CB0BE02A692AAB0008BC70 /* PDFA_Graph.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PDFA_Graph.hpp; sourceTree = "<group>"; };
+		42CB0BE52A692CFF0008BC70 /* tester.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tester.cpp; sourceTree = "<group>"; };
+		42CB0BE62A692CFF0008BC70 /* tester.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = tester.hpp; sourceTree = "<group>"; };
+		42CB0BE92A6930BB0008BC70 /* utils.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
+		42CB0BEA2A6930BB0008BC70 /* utils.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = utils.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +81,8 @@
 		42134FC22A0A7B0300B9827B /* PDFA_Generator */ = {
 			isa = PBXGroup;
 			children = (
+				42CB0BE82A69309F0008BC70 /* utils */,
+				42CB0BE42A692CE40008BC70 /* tester */,
 				42CB0BD92A68098B0008BC70 /* learners */,
 				42134FC32A0A7B0300B9827B /* main.cpp */,
 				42CB0BD12A67E27D0008BC70 /* pdfa.cpp */,
@@ -85,10 +96,30 @@
 		42CB0BD92A68098B0008BC70 /* learners */ = {
 			isa = PBXGroup;
 			children = (
-				42CB0BCF2A4DB9F90008BC70 /* PDFA_Graph.hpp */,
-				42CB0BCE2A4DB9F90008BC70 /* PDFA_Graph.cpp */,
+				42CB0BDF2A692AAB0008BC70 /* avg_length_learner.cpp */,
+				42CB0BDD2A692AAB0008BC70 /* avg_length_learner.hpp */,
+				42CB0BDE2A692AAB0008BC70 /* PDFA_Graph.cpp */,
+				42CB0BE02A692AAB0008BC70 /* PDFA_Graph.hpp */,
 			);
 			path = learners;
+			sourceTree = "<group>";
+		};
+		42CB0BE42A692CE40008BC70 /* tester */ = {
+			isa = PBXGroup;
+			children = (
+				42CB0BE52A692CFF0008BC70 /* tester.cpp */,
+				42CB0BE62A692CFF0008BC70 /* tester.hpp */,
+			);
+			path = tester;
+			sourceTree = "<group>";
+		};
+		42CB0BE82A69309F0008BC70 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				42CB0BE92A6930BB0008BC70 /* utils.cpp */,
+				42CB0BEA2A6930BB0008BC70 /* utils.hpp */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,8 +181,11 @@
 			files = (
 				42CB0BD62A6802710008BC70 /* pdfa_learner.cpp in Sources */,
 				42134FC42A0A7B0300B9827B /* main.cpp in Sources */,
-				42CB0BD02A4DB9F90008BC70 /* PDFA_Graph.cpp in Sources */,
+				42CB0BE22A692AAB0008BC70 /* avg_length_learner.cpp in Sources */,
 				42CB0BD32A67E27D0008BC70 /* pdfa.cpp in Sources */,
+				42CB0BE72A692CFF0008BC70 /* tester.cpp in Sources */,
+				42CB0BE12A692AAB0008BC70 /* PDFA_Graph.cpp in Sources */,
+				42CB0BEB2A6930BB0008BC70 /* utils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

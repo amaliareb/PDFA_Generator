@@ -19,7 +19,7 @@ char get_character(int x) {
 }
 
 // constructor for empty PDFA
-PDFA::PDFA(int N_states, int N_alphabet): N_states(N_states), N_alphabet(N_alphabet) ,start_state(0), end_state(N_states) {
+PDFA::PDFA(int N_states, int N_alphabet): N_states(N_states), N_alphabet(N_alphabet), start_state(0), end_state(N_states) {
     // initialize transition function with sizes N_states and N_alphabet
     transitions.resize(N_states, vector<pair<int, double>> (N_alphabet, {-1, 0.0}));
 }
@@ -28,20 +28,20 @@ PDFA::PDFA(int N_states, int N_alphabet): N_states(N_states), N_alphabet(N_alpha
 PDFA::PDFA(int N_states, int N_alphabet, vector<vector<pair<int, double>>> transitions): N_states(N_states), N_alphabet(N_alphabet), start_state(0), end_state(N_states), transitions(transitions) {
 }
 
-bool PDFA::has_transition(int source, int target) {
+bool PDFA::has_transition(int source, int target) const {
     if (target <= start_state || target > end_state) return false;
     if (source < start_state || source >= end_state) return false;
     for (int letter = 0; letter < N_alphabet; ++letter) if (transitions[source][letter].first == target) return true;
     return false;
 }
 
-bool PDFA::has_letter(int source, int letter) {
+bool PDFA::has_letter(int source, int letter) const {
     if (source < start_state || source >= end_state) return false;
     if (letter < 0 || letter >= N_alphabet) return false;
     return transitions[source][letter].first >= start_state;
 }
 
-string PDFA::output_string() {
+string PDFA::output_string() const {
     stringstream output;
     int current = start_state;
     while (current != end_state) {
@@ -60,7 +60,7 @@ string PDFA::output_string() {
     return output.str();
 }
 
-string PDFA::output_pdfa(int precision) {
+string PDFA::output_pdfa(int precision) const {
     stringstream output;
     output << fixed << showpoint;
     output << setprecision(precision);

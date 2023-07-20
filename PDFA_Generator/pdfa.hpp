@@ -29,13 +29,13 @@ class PDFA {
     // constructor when reading a PDFA
     PDFA(int N_states, int N_alphabet, vector<vector<pair<int, double>>> transitions);
     
-    bool has_transition(int source, int target);
+    bool has_transition(int source, int target) const;
     
-    bool has_letter(int source, int letter);
+    bool has_letter(int source, int letter) const;
     
-    string output_string();
+    string output_string() const;
     
-    string output_pdfa(int precision);
+    string output_pdfa(int precision) const;
     
 };
 
