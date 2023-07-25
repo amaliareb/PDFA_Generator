@@ -14,6 +14,19 @@
 #include <fstream>
 
 
+vector<double> generate_probabilities(int qty, int ratio = 10) {
+    vector<double> probabilities(qty);
+    double sum = 0.0;
+    
+    // normal distribution generator for probabilities
+    std::default_random_engine generator;
+    std::normal_distribution<double> distribution(5.0,2.0);
+    
+    for (int i = 0; i < qty; ++i) { probabilities[i] = distribution(generator); sum += probabilities[i]; }
+    for (int i = 0; i < qty; ++i) probabilities[i] /= sum;
+    return probabilities;
+}
+
 
 PDFA Pdfa_generator(int pdfa_size, int alphabet_size, int min_transitions, int max_transitions) {
     // potential parameters: distinguishability?
@@ -44,6 +57,10 @@ PDFA Pdfa_generator(int pdfa_size, int alphabet_size, int min_transitions, int m
     // 2. from each node, add other transitions
     for (int state = 0; state < pdfa_size; ++state) {
         int transitions_to_add = rand() % (max_transitions - min_transitions + 1) + min_transitions - 1;
+        
+        vector<double> probabilities = generate_probabilities(transitions_to_add + 1);
+        
+        // adding transitions
         while (transitions_to_add) {
             // randomly generate target, letter and probability of new transition
             int target = rand() % pdfa_size + 1;
@@ -52,7 +69,10 @@ PDFA Pdfa_generator(int pdfa_size, int alphabet_size, int min_transitions, int m
             int new_letter = rand() % alphabet_size;
             while (pdfa.has_letter(state, new_letter)) {new_letter = rand() % alphabet_size;}
             
-            int new_proportion = rand() % 80 + 10;
+            /** replaced this probability generating function with another one on line 56 */
+            /*
+            // give the new transition a probability between 10% and 50%
+            int new_proportion = rand() % 40 + 10;
             double new_probability = (double)new_proportion / 100;
             
             // make all other transitions smaller
@@ -61,11 +81,21 @@ PDFA Pdfa_generator(int pdfa_size, int alphabet_size, int min_transitions, int m
                     pdfa.transitions[state][letter].second *= (1.0 - new_probability);
                 }
             }
+            */
             
             // add the new transition; decrease counter
-            pdfa.transitions[state][new_letter] = {target, new_probability};
+            pdfa.transitions[state][new_letter] = {target, 1};
             transitions_to_add--;
         }
+        
+        // assign generated probabilities to transitions out of state
+        int pb_index = 0;
+        for (int letter = 0; letter < alphabet_size; ++letter)
+            // if transition exists, assign it with a probability
+            if ( pdfa.transitions[state][letter].first != -1 ) {
+                pdfa.transitions[state][letter].second = probabilities[pb_index];
+                pb_index++;
+            }
     }
 
     return pdfa;
