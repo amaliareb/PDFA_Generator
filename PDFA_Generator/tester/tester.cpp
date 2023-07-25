@@ -10,14 +10,11 @@
 #include "avg_length_learner.hpp"
 
 // test constants
-#define PDFA_SIZE 10
-#define ALPHABET_SIZE 6
-#define MIN_TRANSITIONS 2
-#define MAX_TRANSITIONS 4
 
-Tester::Tester(int pdfas_qty, int ans_index, int samples_qty, string learner_type): pdfas_qty(pdfas_qty), ans_index(ans_index), samples_qty(samples_qty) {
+Tester::Tester(int pdfas_qty, int ans_index, int samples_qty, string learner_type, int pdfas_size): pdfas_qty(pdfas_qty), ans_index(ans_index), samples_qty(samples_qty), pdfas_size(pdfas_size) {
     // generate the pdfas
-    for (int i = 0; i < pdfas_qty; ++i) pdfas.push_back(Pdfa_generator(PDFA_SIZE, ALPHABET_SIZE, MIN_TRANSITIONS, MAX_TRANSITIONS));
+    for (int i = 0; i < pdfas_qty; ++i)
+        pdfas.push_back(Pdfa_generator(pdfas_size, ALPHABET_SIZE, MIN_TRANSITIONS, MAX_TRANSITIONS));
     
     // generate the output samples
     for (int i = 0; i < samples_qty; ++i) samples.push_back(pdfas[ans_index].output_string());
@@ -33,6 +30,7 @@ Tester::Tester(int pdfas_qty, int ans_index, int samples_qty, string learner_typ
 }
 
 bool Tester::run_test() {
+    
     int learner_result_index = learner->get_result_index();
     
     return ( learner_result_index == ans_index );
