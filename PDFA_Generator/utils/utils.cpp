@@ -50,9 +50,10 @@ PDFA Pdfa_generator(int pdfa_size, int alphabet_size, int min_transitions, int m
             while (target == state || pdfa.has_transition(state, target)) {target = rand() % pdfa_size + 1;}
             
             int new_letter = rand() % alphabet_size;
-            while (pdfa.has_letter(state, new_letter)) {new_letter = rand() % alphabet_size;}
+            while (pdfa.has_letter(state, new_letter)) { new_letter = rand() % alphabet_size; }
             
-            int new_proportion = rand() % 80 + 10;
+            // add new transition with probability between 10% and 40%
+            int new_proportion = rand() % 30 + 10;
             double new_probability = (double)new_proportion / 100;
             
             // make all other transitions smaller

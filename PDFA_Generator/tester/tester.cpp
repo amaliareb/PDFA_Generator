@@ -11,10 +11,10 @@
 
 // test constants
 
-Tester::Tester(int pdfas_qty, int ans_index, int samples_qty, string learner_type, int pdfas_size): pdfas_qty(pdfas_qty), ans_index(ans_index), samples_qty(samples_qty), pdfas_size(pdfas_size) {
+Tester::Tester(int pdfas_qty, int ans_index, int samples_qty, string learner_type, int pdfas_size, int alphabet_size, int max_trans, int min_trans): pdfas_qty(pdfas_qty), ans_index(ans_index), samples_qty(samples_qty), pdfas_size(pdfas_size), alphabet_size(alphabet_size), max_trans(max_trans), min_trans(min_trans) {
     // generate the pdfas
     for (int i = 0; i < pdfas_qty; ++i)
-        pdfas.push_back(Pdfa_generator(pdfas_size, ALPHABET_SIZE, MIN_TRANSITIONS, MAX_TRANSITIONS));
+        pdfas.push_back(Pdfa_generator(pdfas_size, alphabet_size, min_trans, max_trans));
     
     // generate the output samples
     for (int i = 0; i < samples_qty; ++i) samples.push_back(pdfas[ans_index].output_string());
