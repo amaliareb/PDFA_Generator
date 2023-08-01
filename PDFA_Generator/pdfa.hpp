@@ -33,6 +33,10 @@ class PDFA {
     
     bool has_letter(int source, int letter) const;
     
+    int max_probability_letter(int state) const;
+    
+    bool accepts_string(string s) const;
+    
     string output_string() const;
     
     string output_pdfa(int precision) const;

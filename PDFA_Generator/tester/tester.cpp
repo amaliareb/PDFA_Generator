@@ -8,6 +8,7 @@
 #include "tester.hpp"
 #include "utils.hpp"
 #include "avg_length_learner.hpp"
+#include "plus_avg_length_learner.hpp"
 
 // test constants
 
@@ -24,9 +25,12 @@ Tester::Tester(int pdfas_qty, int ans_index, int samples_qty, string learner_typ
     if (learner_type == "AVGLEN") {
 //        Average_Length_Learner new_learner(samples, pdfas, 10);
 //        learner = &new_learner;
-        learner.reset(new Average_Length_Learner(samples, pdfas, 10));
+        learner.reset(new Average_Length_Learner(samples, pdfas, samples_qty));
     }
-//    else {}
+    else if ( learner_type == "PLUSAVGLEN" ) {
+        learner.reset(new Plus_Average_Length_Learner(samples, pdfas, samples_qty));
+
+    }
 }
 
 bool Tester::run_test() {

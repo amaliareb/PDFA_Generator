@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42015A442A739FA400F57517 /* plus_avg_length_learner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42015A422A739FA400F57517 /* plus_avg_length_learner.cpp */; };
 		42134FC42A0A7B0300B9827B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42134FC32A0A7B0300B9827B /* main.cpp */; };
 		42CB0BD32A67E27D0008BC70 /* pdfa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BD12A67E27D0008BC70 /* pdfa.cpp */; };
 		42CB0BD62A6802710008BC70 /* pdfa_learner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 42CB0BD42A6802710008BC70 /* pdfa_learner.cpp */; };
@@ -29,6 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		42015A422A739FA400F57517 /* plus_avg_length_learner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = plus_avg_length_learner.cpp; sourceTree = "<group>"; };
+		42015A432A739FA400F57517 /* plus_avg_length_learner.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = plus_avg_length_learner.hpp; sourceTree = "<group>"; };
 		42134FC02A0A7B0300B9827B /* PDFA_Generator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PDFA_Generator; sourceTree = BUILT_PRODUCTS_DIR; };
 		42134FC32A0A7B0300B9827B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		42134FCA2A0BC4B100B9827B /* pdfa1.in */ = {isa = PBXFileReference; lastKnownFileType = text; path = pdfa1.in; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 				42CB0BDD2A692AAB0008BC70 /* avg_length_learner.hpp */,
 				42CB0BDE2A692AAB0008BC70 /* PDFA_Graph.cpp */,
 				42CB0BE02A692AAB0008BC70 /* PDFA_Graph.hpp */,
+				42015A422A739FA400F57517 /* plus_avg_length_learner.cpp */,
+				42015A432A739FA400F57517 /* plus_avg_length_learner.hpp */,
 			);
 			path = learners;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				42CB0BD32A67E27D0008BC70 /* pdfa.cpp in Sources */,
 				42CB0BE72A692CFF0008BC70 /* tester.cpp in Sources */,
 				42CB0BE12A692AAB0008BC70 /* PDFA_Graph.cpp in Sources */,
+				42015A442A739FA400F57517 /* plus_avg_length_learner.cpp in Sources */,
 				42CB0BEB2A6930BB0008BC70 /* utils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

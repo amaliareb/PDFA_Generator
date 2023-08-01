@@ -41,6 +41,24 @@ bool PDFA::has_letter(int source, int letter) const {
     return transitions[source][letter].first >= start_state;
 }
 
+int PDFA::max_probability_letter(int state) const {
+    int ret = 0;
+    for (int i = 1; i < N_alphabet; ++i)
+        if ( transitions[state][i].second > transitions[state][ret].second ) ret = i;
+    return ret;
+}
+
+bool PDFA::accepts_string(string s) const {
+    int curr_state = 0;
+    for (int ind = 0; ind < s.size(); ++ind) {
+        if ( curr_state == -1 || curr_state == end_state) return false;
+        curr_state = transitions[curr_state][s[ind] - 'a'].first;
+    }
+    if ( curr_state == end_state ) return true;
+    return false;
+}
+
+
 string PDFA::output_string() const {
     stringstream output;
     int current = start_state;
