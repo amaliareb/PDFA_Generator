@@ -1,10 +1,3 @@
-//
-//  tester.cpp
-//  PDFA_Generator
-//
-//  Created by Amalia on 20/07/2023.
-//
-
 #include "tester.hpp"
 #include "utils.hpp"
 #include "avg_length_learner.hpp"

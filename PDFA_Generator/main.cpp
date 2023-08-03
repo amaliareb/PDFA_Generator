@@ -1,15 +1,3 @@
-//
-//  main.cpp
-//  PDFA_Generator
-//
-//
-// 1 States
-// 2 start state
-// 3 end state
-// 4 alphabet
-// 5 transition function
-// 6 probability on transitions
-
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>

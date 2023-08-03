@@ -1,10 +1,3 @@
-//
-//  pdfa_learner.hpp
-//  PDFA_Generator
-//
-//  Created by Amalia on 19/07/2023.
-//
-
 #ifndef pdfa_learner_hpp
 #define pdfa_learner_hpp
 

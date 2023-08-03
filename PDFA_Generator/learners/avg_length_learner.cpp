@@ -1,10 +1,3 @@
-//
-//  avg_length_learner.cpp
-//  PDFA_Generator
-//
-//  Created by Amalia on 19/07/2023.
-//
-
 #include "avg_length_learner.hpp"
 
 #include <string>

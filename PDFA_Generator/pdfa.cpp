@@ -1,10 +1,3 @@
-//
-//  pdfa.cpp
-//  PDFA_Generator
-//
-//  Created by Amalia on 19/07/2023.
-//
-
 #include <string>
 #include <sstream>
 #include <fstream>

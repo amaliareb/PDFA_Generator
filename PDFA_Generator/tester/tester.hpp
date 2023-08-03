@@ -1,10 +1,3 @@
-//
-//  tester.hpp
-//  PDFA_Generator
-//
-//  Created by Amalia on 20/07/2023.
-//
-
 #ifndef tester_hpp
 #define tester_hpp
 

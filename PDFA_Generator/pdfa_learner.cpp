@@ -1,10 +1,3 @@
-//
-//  pdfa_learner.cpp
-//  PDFA_Generator
-//
-//  Created by Amalia on 19/07/2023.
-//
-
 #include "pdfa_learner.hpp"
 #include <vector>
 

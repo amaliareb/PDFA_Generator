@@ -1,10 +1,3 @@
-//
-//  avg_length_learner.hpp
-//  PDFA_Generator
-//
-//  Created by Amalia on 19/07/2023.
-//
-
 #ifndef avg_length_learner_hpp
 #define avg_length_learner_hpp
 
